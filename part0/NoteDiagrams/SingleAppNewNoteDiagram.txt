@@ -1,0 +1,14 @@
+squence diagram for adding a note
+
+SequenceDiagram
+    participant browser
+    participant server
+
+    Note right of browser: java script code...
+    ...takes note and appeands it to notes and gives copy to server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    browser-->>server: the new_note 
+    deactivate server
+

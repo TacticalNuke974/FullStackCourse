@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        form {
+            /* Center form on page 400px wide*/
+            margin: 0 auto;
+            width: 400px;
+
+            /* From outline */
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+
+        }
+
+        ul {
+            /* Remove bullet points */
+            list-style: none;
+
+            /* Remove any auto padding*/
+            padding: 0;
+            margin: 0;
+
+        }
+
+        form li + li {
+            margin-top: 1em;
+        }
+
+        label {
+            /* Uniform line size*/
+            display: inline-block;
+            
+            /* Spaces each label before the input 90px wide*/
+            width: 90px;
+
+            /* Pushes text to right of width */
+            text-align: right;
+
+        }
+
+        input,
+        textarea {
+            /* uniform font settings, textarea has diff default font*/
+            font: 1em sans-serif;
+
+            /* Make text fields uniform size*/
+            width: 300px;
+            box-sizing: border-box;
+
+            /* Match form field borders */
+            border: 1px solid #999;
+        }
+
+        input:focus,
+        textarea:focus {
+            /* Additional highlight for focused elements*/
+            border-color: #000;
+        }
+
+        textarea {
+            /* Align multiline text fields with their labels*/
+            vertical-align: top;
+
+            /* Provide space to type text*/
+            height: 5em;
+        }
+
+        .button {
+            /* Align buttons with the text fields*/
+            padding-left: 90px;
+        }
+
+        button {
+            /* This extra margin represents roughly the same space
+             as the space between the labels and their text fields*/
+            margin-left: .5em;
+        }
+
+
+
+    </style>
+
+    <title>Web form test</title>
+</head>
+<body>
+
+    <form action="/my-handling-form-page" method="post">
+
+        <ul>
+            <li>
+                <label for ="mail">Email:</label>
+                <input type="email" id="mail" name="user_mail" />
+            </li>
+            <li>
+                <label for ="password">Password:</label>
+                <input type="text" id="password" name="user_password" />
+            </li>
+            <li>
+                <label for ="msg">Message:</label>
+                <textarea id="msg" name="user_message">message to world goes here...</textarea>
+            </li>
+            <li class="button">
+                <button type="submit">Login/Signup</button>
+            </li>
+
+        </ul>
+
+    </form>
+    
+</body>
+</html>

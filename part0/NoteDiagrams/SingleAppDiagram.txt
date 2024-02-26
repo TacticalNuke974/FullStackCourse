@@ -1,0 +1,30 @@
+squence diagram for adding a note
+
+SequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: notes HTML file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/nmain.css
+    activate server
+    server-->>browser: main.css file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: main.js file
+    deactivate server
+
+    Note right of browser: the browser starts executing the js code fetching the json file
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: data.json file
+    deactivate server
+
+    Note right of browser: the browser executes the callback function that renders the notes
+
